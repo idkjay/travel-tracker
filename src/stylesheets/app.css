@@ -1,0 +1,40 @@
+body {
+  font-family: 'Raleway', sans-serif;
+    background-color: #E5F3F4;
+}
+
+img {
+  height: 20rem;
+  width: 70%;
+  margin-top: 2rem;
+}
+
+.box-div {
+  border: 1px solid black;
+  margin-top: 2rem;
+}
+
+.done {
+  text-decoration: line-through;
+
+}
+
+h3 {
+  font-weight: bold;
+  padding-top: 1em;
+}
+
+.beaut {
+  font-family: impact;
+  font-size: 250%;
+  color: #fff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #fff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
