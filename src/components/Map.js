@@ -2,33 +2,27 @@ import React, { useState } from 'react';
 import Place from './Place'
 
 const Map = props => {
-  const [selectedId,setSelectedId] = useState([])
+  const [selectedId,setSelectedId] = useState(null)
   let beautyMsg;
   const destinations = props.mapArray.map((placeObj) => {
 
     let selectedStatus = false
 
-    if (selectedId.includes(placeObj.id)) {
+    if (selectedId === placeObj.id) {
       selectedStatus = true
     }
 
-    if (selectedId.includes(props.favorite)) {
+    if (selectedId === props.favorite) {
       beautyMsg =
       <div className="beaut">What a beauty!</div>
     }
 
     let handleClickFunc = () => {
-      let updatedArray = selectedId.concat([placeObj.id])
-      event.preventDefault();
-      if(selectedId.includes(placeObj.id)) {
-        let mapOfPlaces = selectedId.map(placeOfPlaces => {
-          return placeOfPlaces
-        })
-        let itemToBeRemoved = mapOfPlaces.indexOf(placeObj.id);
-        mapOfPlaces.splice(itemToBeRemoved,1)
-        setSelectedId(mapOfPlaces)
+      event.preventDefault()
+      if(placeObj.id === selectedId) {
+        setSelectedId(null)
       } else {
-        setSelectedId(updatedArray)
+        setSelectedId(placeObj.id)
       }
     }
 
